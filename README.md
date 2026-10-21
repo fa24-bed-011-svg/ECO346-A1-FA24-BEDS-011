@@ -42,3 +42,9 @@ Weighted mean earnings generally increase with age, rising from Rs 192,523 for a
 ## Question 4: Redesign of the Default Graph
 
 The redesigned graph improves the default scatterplot in three ways. First, transparency makes overlapping individual observations easier to see. Second, the logarithmic y-axis makes earnings across a wide range easier to compare. Third, the weighted age-band means are highlighted with a blue line and markers, making the overall age pattern clearer. Clear axis labels, a descriptive title, and a source caption also improve interpretation. However, the redesign hides some of the raw visual simplicity of the default graph and may make the blue trend appear more prominent than individual variation.
+
+### Q5: Python Reproduction and Comparison
+
+The Python age-band table matches the R results. For ages 25–29, the weighted mean annual earnings are Rs 303,153.9 in both R and Python. Both graphs show the relationship between age and annual earnings using a logarithmic y-axis and weighted age-band means.
+
+Small differences in appearance may occur because R and Python use different default plotting styles, fonts, and formatting settings.

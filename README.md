@@ -15,9 +15,9 @@ The weighted median annual earnings of urban earners in Sindh are Rs 264,000, co
 
 
 
-Question 3: Annual Earnings by Age
+##Question 3: Annual Earnings by Age
 
-Weighted Mean Earnings by Age Band
+##Weighted Mean Earnings by Age Band
 
 | Age Band | Midpoint | Unweighted Observations | Weighted Mean Earnings (Rs) |
 |---|---:|---:|---:|
@@ -34,6 +34,6 @@ Weighted Mean Earnings by Age Band
 
 All age bands contain at least 30 unweighted observations.
 
- Economic Interpretation
+ ##Economic Interpretation
 
 Weighted mean earnings generally increase with age, rising from Rs 192,523 for ages 15–19 to a peak of Rs 542,400 for ages 55–59. However, earnings do not increase continuously: the 35–39 and 45–49 groups show declines compared with the preceding bands, and earnings fall to Rs 414,263 for ages 60–64. The mean for ages 45–49 is Rs 431,697, compared with Rs 303,154 for ages 25–29. One limitation is that these are cross-sectional age-group comparisons, so they do not prove that an individual's earnings rise as they grow older.

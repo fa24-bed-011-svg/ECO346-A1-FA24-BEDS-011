@@ -37,3 +37,8 @@ All age bands contain at least 30 unweighted observations.
  ##Economic Interpretation
 
 Weighted mean earnings generally increase with age, rising from Rs 192,523 for ages 15–19 to a peak of Rs 542,400 for ages 55–59. However, earnings do not increase continuously: the 35–39 and 45–49 groups show declines compared with the preceding bands, and earnings fall to Rs 414,263 for ages 60–64. The mean for ages 45–49 is Rs 431,697, compared with Rs 303,154 for ages 25–29. One limitation is that these are cross-sectional age-group comparisons, so they do not prove that an individual's earnings rise as they grow older.
+
+
+## Question 4: Redesign of the Default Graph
+
+The redesigned graph improves the default scatterplot in three ways. First, transparency makes overlapping individual observations easier to see. Second, the logarithmic y-axis makes earnings across a wide range easier to compare. Third, the weighted age-band means are highlighted with a blue line and markers, making the overall age pattern clearer. Clear axis labels, a descriptive title, and a source caption also improve interpretation. However, the redesign hides some of the raw visual simplicity of the default graph and may make the blue trend appear more prominent than individual variation.

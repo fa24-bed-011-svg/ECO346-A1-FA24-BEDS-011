@@ -19,28 +19,42 @@
 The weighted median annual earnings of urban earners in Sindh are Rs 264,000, compared with the unweighted median of Rs 252,000. The weighted 10th and 90th percentiles are Rs 120,000 and Rs 696,000, respectively. The P90/P10 ratio of 5.80 indicates a substantial earnings gap between lower- and higher-earning workers. Of the 6,687 original observations, 4,043 did not meet the sample selection criteria, leaving 2,644 valid earners. Of these, two fell outside the histogram's specified earnings range of Rs 10,000 to Rs 10,000,000.
 
 
-\##Question 3: Annual Earnings by Age
+## Question 3: The Relationship Between Age and Earnings
 
-\##Weighted Mean Earnings by Age Band
+### Figure
 
-| Age Band | Midpoint | Unweighted Observations | Weighted Mean Earnings (Rs) |
-| -------- | -------- | ----------------------- | --------------------------- |
-| 15–19    | 17       | 160                     | 192,523.1                   |
-| 20–24    | 22       | 296                     | 222,947.6                   |
-| 25–29    | 27       | 398                     | 303,153.9                   |
-| 30–34    | 32       | 396                     | 379,254.0                   |
-| 35–39    | 37       | 359                     | 360,221.2                   |
-| 40–44    | 42       | 344                     | 446,533.3                   |
-| 45–49    | 47       | 250                     | 431,696.7                   |
-| 50–54    | 52       | 212                     | 530,772.9                   |
-| 55–59    | 57       | 157                     | 542,400.0                   |
-| 60–64    | 62       | 72                      | 414,262.5                   |
+**Figure 2: Annual Earnings by Age in Urban Sindh**
 
-All age bands contain at least 30 unweighted observations.
+![Annual Earnings by Age](figures/q3_age_earnings.svg)
 
-\##Economic Interpretation
+**Figure file:** `figures/q3_age_earnings.svg`
 
-Weighted mean earnings generally increase with age, rising from Rs 192,523 for ages 15–19 to a peak of Rs 542,400 for ages 55–59. However, earnings do not increase continuously: the 35–39 and 45–49 groups show declines compared with the preceding bands, and earnings fall to Rs 414,263 for ages 60–64. The mean for ages 45–49 is Rs 431,697, compared with Rs 303,154 for ages 25–29. One limitation is that these are cross-sectional age-group comparisons, so they do not prove that an individual's earnings rise as they grow older.
+The figure presents individual annual earnings by age, along with weighted mean earnings for each five-year age band. The vertical axis uses a logarithmic scale and is labelled in Pakistani rupees. Individual observations are shown as semi-transparent, horizontally jittered points, while larger markers connected by a line represent weighted mean earnings at each age-band midpoint. Hollow markers indicate age bands with fewer than 30 earners.
+
+### Age-Band Statistics
+
+| Age band (years) | Number of earners | Weighted mean earnings (Rs) |
+|:---|---:|---:|
+| 15–19 | 160 | 192,523 |
+| 20–24 | 296 | 222,948 |
+| 25–29 | 398 | 303,154 |
+| 30–34 | 396 | 379,254 |
+| 35–39 | 359 | 360,221 |
+| 40–44 | 344 | 446,533 |
+| 45–49 | 250 | 431,697 |
+| 50–54 | 212 | 530,773 |
+| 55–59 | 157 | 542,400 |
+| 60–64 | 72 | 414,262 |
+
+### Required Results
+
+- **Weighted mean earnings for ages 25–29:** Rs 303,154.
+- **Weighted mean earnings for ages 45–49:** Rs 431,697.
+- **Age band with the highest weighted mean earnings:** Ages 55–59, at Rs 542,400.
+
+### Interpretation
+
+Weighted mean earnings generally increase across age bands, rising from Rs 192,523 for earners aged 15–19 to a peak of Rs 542,400 for those aged 55–59. However, the pattern is not consistently upward: mean earnings decline among ages 35–39 and 45–49, before falling to Rs 414,262 for ages 60–64. The mean for ages 45–49 is Rs 431,697, compared with Rs 303,154 for ages 25–29. From an economic perspective, these differences may reflect experience, occupation, or other factors. However, this cross-sectional figure cannot establish that an individual's earnings rise as they age or prove that age causes higher earnings.
 
 ## Question 4: Redesign of the Default Graph
 

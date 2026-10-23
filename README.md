@@ -82,11 +82,23 @@ The redesigned graph improves readability by making individual observations semi
 
 The default graph preserves the raw observations and makes their overall spread visible. However, overlapping points and the wide earnings range make the age-related pattern harder to interpret than in the redesigned graph.
 
-### Q5: Python Reproduction and Comparison
+##question 5
 
-The Python age-band table matches the R results. For ages 25–29, the weighted mean annual earnings are Rs 303,153.9 in both R and Python. Both graphs show the relationship between age and annual earnings using a logarithmic y-axis and weighted age-band means.
+## Second-Language Replication: Python
 
-Small differences in appearance may occur because R and Python use different default plotting styles, fonts, and formatting settings.
+The Q3 age-band analysis was replicated in Python using the PSLM 2019–20 person and household datasets. The sample was restricted to urban Sindh earners aged 15–64 with positive annual earnings. Household weights (`hhweight`) were used to calculate weighted mean annual earnings for each five-year age band.
+
+The Python results matched the R results to the rupee.
+
+**25–29 age band weighted mean earnings:**
+- R: Rs 303,154
+- Python: Rs 303,154
+
+**Figure:** `figures/q3_python.svg`
+
+**Script:** `scripts/q3_python.py`
+
+Both implementations use the same sample restrictions, age bands, and household weights.
 
 
 

@@ -1,51 +1,39 @@
-##QUESTION:02
-nrow(data)
-summary(data$earn_annual)
-summary(data$hhweight)
-data <- data[
-  !is.na(data$earn_annual) &
-    !is.na(data$hhweight) &
-    data$earn_annual > 0 &
-    data$hhweight > 0,
-]
+# QUESTION 2: Weighted earnings distribution
 
-nrow(data)
+library(ggplot2)
+library(svglite)
+library(scales)
 
-weighted_quantile <- function(x, w, probs) {
-  ord <- order(x)
-  x <- x[ord]
-  w <- w[ord]
-  
-  cum_w <- cumsum(w) / sum(w)
-  
-  sapply(probs, function(p) {
-    x[which(cum_w >= p)[1]]
-  })
-}
+# Count valid earners before applying histogram range
+n_earners <- nrow(data)
 
+# Histogram range: Rs 10,000 to Rs 10,000,000
+in_range <- data$earn_annual >= 10000 &
+  data$earn_annual <= 10000000
+
+n_excluded <- sum(!in_range)
+hist_data <- data[in_range, ]
+
+# Weighted statistics from all valid earners
+unweighted_median <- median(data$earn_annual)
 weighted_results <- weighted_quantile(
   data$earn_annual,
   data$hhweight,
   c(0.10, 0.50, 0.90)
 )
 
-weighted_results
-
 p10 <- weighted_results[1]
 p50 <- weighted_results[2]
 p90 <- weighted_results[3]
-
 p90_p10_ratio <- p90 / p10
 
-p90_p10_ratio
-
-library(ggplot2)
-library(svglite)
-library(scales)
-
-p_hist <- ggplot(data, aes(x = log10(earn_annual), weight = hhweight)) +
+# Histogram using log10 earnings
+p_hist <- ggplot(
+  hist_data,
+  aes(x = log10(earn_annual), weight = hhweight)
+) +
   geom_histogram(
-    breaks = seq(4.0, 7.0, by = 0.1),
+    breaks = seq(4, 7, by = 0.1),
     aes(y = after_stat(count / sum(count) / 0.1)),
     fill = "steelblue",
     color = "white"
@@ -60,21 +48,43 @@ p_hist <- ggplot(data, aes(x = log10(earn_annual), weight = hhweight)) +
     linetype = "dashed",
     color = "darkgreen"
   ) +
-  labs(
-    title = "Annual Earnings Distribution: Sindh Urban",
-    subtitle = "Weighted median (red) and 90th percentile (green)",
-    x = "Annual earnings (Rs, log10 scale)",
-    y = "Weighted density per log10 unit",
-    caption = "Source: PSLM | Ages 15–64 | Positive annual earners | Weighted by household survey weight"
+  annotate(
+    "text",
+    x = log10(p50),
+    y = Inf,
+    label = paste("Median: Rs", format(round(p50), big.mark = ",")),
+    color = "red",
+    angle = 90,
+    vjust = 1.5,
+    hjust = 1.1
+  ) +
+  annotate(
+    "text",
+    x = log10(p90),
+    y = Inf,
+    label = paste("P90: Rs", format(round(p90), big.mark = ",")),
+    color = "darkgreen",
+    angle = 90,
+    vjust = 1.5,
+    hjust = 1.1
   ) +
   scale_x_continuous(
     breaks = 4:7,
     labels = c("10,000", "100,000", "1,000,000", "10,000,000")
   ) +
+  labs(
+    title = "Most Earners Receive Less Than the Highest-Earning Group",
+    x = "Annual earnings (Rs)",
+    y = "Weighted density per log10 unit",
+    caption = paste0(
+      "Source: PSLM 2019–20 | Sindh urban earners, ages 15–64, ",
+      "positive earnings | Weighted by hhweight | ",
+      n_excluded, " earners outside histogram range"
+    )
+  ) +
   theme_minimal()
 
-p_hist
-
+# Save as SVG
 dir.create("figures", showWarnings = FALSE)
 
 ggsave(
@@ -84,28 +94,12 @@ ggsave(
   height = 6
 )
 
-file.exists("figures/q2_weighted_histogram.svg")
-# Number of valid earners
-n_earners <- nrow(data)
+# Print required statistics
+cat("Number of earners:", n_earners, "\n")
+cat("Unweighted median:", round(unweighted_median), "\n")
+cat("Weighted P10:", round(p10), "\n")
+cat("Weighted median:", round(p50), "\n")
+cat("Weighted P90:", round(p90), "\n")
+cat("P90/P10 ratio:", round(p90_p10_ratio, 2), "\n")
+cat("Excluded from histogram:", n_excluded, "\n")
 
-# Unweighted median
-unweighted_median <- median(data$earn_annual)
-
-# Weighted median and percentiles
-p10 <- weighted_results[1]
-p50 <- weighted_results[2]
-p90 <- weighted_results[3]
-
-# Display results
-n_earners
-unweighted_median
-p10
-p50
-p90
-p90 / p10
-
-original_n <- 6687
-valid_n <- nrow(data)
-
-excluded_n <- original_n - valid_n
-excluded_n

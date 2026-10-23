@@ -1,5 +1,5 @@
 
-# Task 1: Default graph for Question 4
+# Default graph for Question 4
 
 # 1. Set repository folder
 setwd("E:/AMNARASHEED-ECO346-Data-Visualization-Assignment")

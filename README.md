@@ -56,9 +56,31 @@ The figure presents individual annual earnings by age, along with weighted mean 
 
 Weighted mean earnings generally increase across age bands, rising from Rs 192,523 for earners aged 15–19 to a peak of Rs 542,400 for those aged 55–59. However, the pattern is not consistently upward: mean earnings decline among ages 35–39 and 45–49, before falling to Rs 414,262 for ages 60–64. The mean for ages 45–49 is Rs 431,697, compared with Rs 303,154 for ages 25–29. From an economic perspective, these differences may reflect experience, occupation, or other factors. However, this cross-sectional figure cannot establish that an individual's earnings rise as they age or prove that age causes higher earnings.
 
-## Question 4: Redesign of the Default Graph
+## Question 4: Default Graph and Redesign
 
-The redesigned graph improves the default scatterplot in three ways. First, transparency makes overlapping individual observations easier to see. Second, the logarithmic y-axis makes earnings across a wide range easier to compare. Third, the weighted age-band means are highlighted with a blue line and markers, making the overall age pattern clearer. Clear axis labels, a descriptive title, and a source caption also improve interpretation. However, the redesign hides some of the raw visual simplicity of the default graph and may make the blue trend appear more prominent than individual variation.
+### Default Graph
+
+The default graph was created using `ggplot(data, aes(x = age, y = earn_annual)) + geom_point()`. It displays individual observations using the default plotting settings without additional styling or transformations.
+
+**Figure:** `figures/default.svg`
+
+### Redesigned Graph
+
+The redesigned graph improves readability by making individual observations semi-transparent and adding horizontal jitter to reduce overlapping points. Weighted mean annual earnings are calculated for five-year age bands and displayed using a connected line and hollow markers. The y-axis uses a logarithmic scale to show the wide variation in earnings, and the highest-earning age band is annotated.
+
+**Figure:** `figures/redesign.svg`
+
+### Design Changes and Principles
+
+1. **Transparency:** Reduces visual clutter caused by overlapping observations.
+2. **Horizontal jitter:** Makes individual observations easier to distinguish without materially changing their age positions.
+3. **Weighted means and connecting line:** Highlights the overall earnings pattern across age bands.
+4. **Logarithmic y-axis:** Makes the wide range of annual earnings easier to examine.
+5. **Annotation:** Draws attention to the age band with the highest weighted mean earnings.
+
+### What the Default Graph Shows
+
+The default graph preserves the raw observations and makes their overall spread visible. However, overlapping points and the wide earnings range make the age-related pattern harder to interpret than in the redesigned graph.
 
 ### Q5: Python Reproduction and Comparison
 
@@ -67,10 +89,4 @@ The Python age-band table matches the R results. For ages 25–29, the weighted 
 Small differences in appearance may occur because R and Python use different default plotting styles, fonts, and formatting settings.
 
 
-## Figures: Before and After Redesign
 
-### Default Figure
-![Default Figure](figures/default.svg)
-
-### Redesigned Figure
-![Redesigned Figure](figures/q4_redesign.svg)

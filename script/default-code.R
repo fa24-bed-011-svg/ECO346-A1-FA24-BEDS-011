@@ -1,4 +1,3 @@
-
 # Default graph for Question 4
 
 # 1. Set repository folder

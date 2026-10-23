@@ -77,7 +77,12 @@ The redesigned graph improves readability by making individual observations semi
 3. **Weighted means and connecting line:** Highlights the overall earnings pattern across age bands.
 4. **Logarithmic y-axis:** Makes the wide range of annual earnings easier to examine.
 5. **Annotation:** Draws attention to the age band with the highest weighted mean earnings.
+   
+##Default vs Redesign
 
+| Default Graph | Redesigned Graph |
+|---|---|
+| ![Default Graph](figures/default.svg) | ![Redesigned Graph](figures/redesign.svg) |
 ### What the Default Graph Shows
 
 The default graph preserves the raw observations and makes their overall spread visible. However, overlapping points and the wide earnings range make the age-related pattern harder to interpret than in the redesigned graph.

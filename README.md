@@ -51,3 +51,12 @@ The redesigned graph improves the default scatterplot in three ways. First, tran
 The Python age-band table matches the R results. For ages 25–29, the weighted mean annual earnings are Rs 303,153.9 in both R and Python. Both graphs show the relationship between age and annual earnings using a logarithmic y-axis and weighted age-band means.
 
 Small differences in appearance may occur because R and Python use different default plotting styles, fonts, and formatting settings.
+
+
+## Figures: Before and After Redesign
+
+### Default Figure
+![Default Figure](figures/default.svg)
+
+### Redesigned Figure
+![Redesigned Figure](figures/q4_redesign.svg)

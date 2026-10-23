@@ -82,7 +82,7 @@ The redesigned graph improves readability by making individual observations semi
 
 | Default Graph | Redesigned Graph |
 |---|---|
-| ![Default Graph](figures/default.svg) | ![Redesigned Graph](figures/redesign.svg) |
+| ![Default Graph](figures/default.svg) | ![Redesigned Graph](figures/q4_redesign.svg) |
 ### What the Default Graph Shows
 
 The default graph preserves the raw observations and makes their overall spread visible. However, overlapping points and the wide earnings range make the age-related pattern harder to interpret than in the redesigned graph.
